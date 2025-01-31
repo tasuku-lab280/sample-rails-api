@@ -38,6 +38,9 @@ group :development, :test do
   gem 'brakeman', require: false
 
   gem 'annotaterb'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'gimei'
   gem 'rubocop', require: false
   gem 'rubocop-factory_bot', require: false
   gem 'rubocop-performance', require: false
