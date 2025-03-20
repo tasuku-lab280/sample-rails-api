@@ -15,7 +15,7 @@ module Front
       token = header.split.last
       return head :unauthorized if token.nil?
 
-      uid = 'uid' # TODO: decode token and get uid
+      uid = Auth0::JsonWebToken.verify(token).fetch(0)['sub']
       auth_provider = UserAuthProvider.find_by(provider: :auth0, uid:)
       head :unauthorized if auth_provider.nil?
 
